@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+
+    <script>
+        // O = p1, X = p2
+        document.addEventListener("DOMContentLoaded", function(){
+            var button1 = document.querySelectorAll(".button");
+            var c = 'X';
+            var co = 0;
+            var cx = 0;
+
+            let p1r = [];
+            let p1c = [];
+            let p2r = [];
+            let p2c = [];
+
+
+            button1.forEach(function(button){
+                button.onclick = function() {
+                    if (c == 'X'){
+                        button.innerHTML = 'O';
+                        c = 'O';
+                        co++;
+                        p1r.push(button.dataset.row);
+                        p1c.push(button.dataset.column);
+                        // console.log(button.dataset.column);
+                    }
+
+                    else if (c == 'O'){
+                        button.innerHTML = 'X';
+                        c = 'X';
+                        cx++;
+                        p2r.push(button.dataset.row);
+                        p2c.push(button.dataset.column);
+                    }
+                    //winning algo
+                    //for p1
+                    if (co >= 3){
+                        let sr = 1;
+                        let sc = 1;
+                        
+                    for (let i = 1; i < p1r.length; i++)
+                    {
+                        if (p1r[0] != p1r[i])
+                        {
+                            sr = 0;
+                            break;
+                        }
+                    }
+                    
+                    for (let i = 1; i < p1c.length; i++)
+                    {
+                        if (p1c[0] != p1c[i] && p1r[i] != p1c[i])
+                        {
+                            sc = 0;
+                            break;
+                        }
+                    }
+
+                    if (sc == 1 || sr == 1){
+                        document.querySelector("#win").innerHTML = "p1 wins";
+                    }
+                }
+
+                if (cx >= 3){
+                        let srx = 1;
+                        let scx = 1;
+                        
+                    for (let i = 1; i < p2r.length; i++)
+                    {
+                        if (p2r[0] != p2r[i])
+                        {
+                            srx = 0;
+                            break;
+                        }
+                    }
+                    
+                    for (let i = 0; i < p2c.length; i++)
+                    {
+                        if (p2c[0] != p2c[i] && p2r[i] != p2c[i])
+                        {
+                            scx = 0;
+                            break;
+                        }
+                    }
+
+                    if (scx == 1 || srx == 1){
+                        document.querySelector("#win").innerHTML = "p2 wins";
+                    }
+                }
+            }
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+    <ul>
+        <li>
+            <button class="button" id="11" data-row="1" data-column="1"></button><button class="button" id="12"data-row="1" data-column="2"></button><button class="button" id="13"data-row="1" data-column="3"></button>
+        </li>
+        <li>
+            <button class="button" id="12" data-row="2" data-column="1"></button><button class="button" id="22" data-row="2" data-column="2"></button><button class="button" id="23" data-row="2" data-column="3"></button>
+        </li>
+        <li>
+            <button class="button" id="13" data-row="3" data-column="1"></button><button class="button" id="32" data-row="3" data-column="2"></button><button class="button" id="33" data-row="3" data-column="3"></button>
+        </li>
+    </ul>
+    
+    <div id="win">
+
+    </div>
+</table>
+</body>
