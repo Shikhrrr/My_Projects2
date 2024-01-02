@@ -33,60 +33,66 @@ int main(void)
     << "2 --> Ranges between 10 to 100" << endl
     << "3 --> Ranges between 100 to 1000" << endl
     << "4 --> Ranges between 1000 to 10000" << endl;
+    cin >> diff;
 
-    // switch (diff) 
-    // {
-    //     case 1:
-    //         random = (rand() % 10) + 1;
-
-    //     case 2:
-    //         random = (rand() % 100) + 1;
-
-    //     case 3:
-    //         random = (rand() % 1000) + 1;
-
-    //     case 4: 
-    //         random = (rand() % 10000) + 1;
-
-    //     default:
-    //         random = 0;
-    // }
-
-    int t = 0;
-    do 
+    switch (diff) 
     {
-        cin >> diff;
-        if (diff == 1)
-        {
+        case 1:
             random = (rand() % 10) + 1;
-            t = 0;
-        }
+            break;
 
-        else if (diff == 2)
-        {
+        case 2:
             random = (rand() % 100) + 1;
-            t = 0;
-        }
+            break;
 
-        else if (diff == 3)
-        {
+        case 3:
             random = (rand() % 1000) + 1;
-            t = 0;
-        }
+            break;
 
-        else if (diff == 4)
-        {
+        case 4: 
             random = (rand() % 10000) + 1;
-            t = 0;
-        }
+            break;
 
-        else
-        {
-            cout << "usage: choose 1,2,3 or 4" << endl;
-            t = 1;
-        }
+        default:
+            random = 0;
+            break;
     }
-    while (t != 0);
+
+    // int t = 0;
+    // do 
+    // {
+    //     cin >> diff;
+    //     if (diff == 1)
+    //     {
+    //         random = (rand() % 10) + 1;
+    //         t = 0;
+    //     }
+
+    //     else if (diff == 2)
+    //     {
+    //         random = (rand() % 100) + 1;
+    //         t = 0;
+    //     }
+
+    //     else if (diff == 3)
+    //     {
+    //         random = (rand() % 1000) + 1;
+    //         t = 0;
+    //     }
+
+    //     else if (diff == 4)
+    //     {
+    //         random = (rand() % 10000) + 1;
+    //         t = 0;
+    //     }
+
+    //     else
+    //     {
+    //         cout << "usage: choose 1,2,3 or 4" << endl;
+    //         t = 1;
+    //     }
+    // }
+    // while (t != 0);
 
     //main algo
     while (true)
