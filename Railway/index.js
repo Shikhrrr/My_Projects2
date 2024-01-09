@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         const headers = {
         'x-rapid-api': 'rapid-api-database',
-        'X-RapidAPI-Key': '8c2006cbc9msh95adb3542db6d7dp14cb6fjsn6e98e04cf6ea',
+        'X-RapidAPI-Key': '', //Couldn't show it here :)
         'X-RapidAPI-Host': 'indian-railway-irctc.p.rapidapi.com'
         };
 
