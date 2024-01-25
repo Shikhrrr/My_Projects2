@@ -1,9 +1,14 @@
+body{
+    background-color: rgba(0, 0, 0, 0.73);
+}
+
 .bg-red {
-    background: rgba(0, 0, 0, 0.159);
+    background: rgba(0, 0, 0, 0.799);
 }
 
 .container {
-    width: 60vh;
+    width: 45vh;
+    border-radius: 20px;
 }
 
 .mx-auto{
@@ -31,5 +36,26 @@
     display: flex;
     padding: 6px;
     margin: 0;
-    width: 272px;
+    width: 285px;
+    height: 10vh;
+    font-size: 5vh;
+    text-align:right;
+    border-radius: 20px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.799);
+    border: 0px;
+}
+
+.operator {
+    background-color: rgb(255, 170, 0);
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+}
+
+.row input:active{
+    background-color: white;
 }
